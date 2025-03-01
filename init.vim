@@ -1,6 +1,5 @@
 call plug#begin()
 
-"Plug 'vim-clang-format'
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,9 +31,25 @@ let g:gruvbox_transparent_bg=1
 
 colorscheme gruvbox
 
+" NOTES:
+" ctrl+] -> go to definition/tag 
+" ctrl+LMB
+"
+" ctrl+t -> back on tag stack (move back from ctrl+])
+" ctrl+RMB
+"
 
 "Custom keymaps
+
+"<F29> -> CTRL+F5
 map <F29> :vs<enter>
+"F<25> -> CTRL+F1
+map <F25> :NERDTree<cr>
+"F<26> -> CTRL+F2
+"F<38> -> CTRL+SHIFT+F2
+map <F38> :lua vim.diagnostic.goto_prev({wrap=true})<cr>
+map <F26> :lua vim.diagnostic.goto_next({wrap=true})<cr>
+map <c-J> :ClangFormat<cr>
 
 set number
 set list
@@ -42,7 +57,8 @@ set shiftwidth=4
 set expandtab
 set softtabstop
 
-
+"git status update delay
+set updatetime=250
 
 lua <<EOF
   -- Set up nvim-cmp.
