@@ -17,6 +17,7 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
+Plug 'puremourning/vimspector'
 
 call plug#end()
 
@@ -30,6 +31,8 @@ let g:gruvbox_italic=1
 let g:gruvbox_transparent_bg=1
 
 colorscheme gruvbox
+
+let g:vimspector_enable_mappings = 'HUMAN'
 
 " NOTES:
 " ctrl+] -> go to definition/tag 
@@ -56,6 +59,7 @@ set list
 set shiftwidth=4
 set expandtab
 set softtabstop
+set clipboard+=unnamedplus
 
 "git status update delay
 set updatetime=250
